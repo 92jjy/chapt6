@@ -1,0 +1,326 @@
+<sdf version='1.7'>
+  <model name='two_robots'>
+    <link name='world_link'>
+      <inertial>
+        <pose>0.4 0 0.140476 0 -0 0</pose>
+        <mass>4.2</mass>
+        <inertia>
+          <ixx>0.144619</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.816619</iyy>
+          <iyz>0</iyz>
+          <izz>0.714</izz>
+        </inertia>
+      </inertial>
+      <collision name='world_link_fixed_joint_lump__robot1_base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.3</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='world_link_fixed_joint_lump__robot1_body_link_collision_1'>
+        <pose>0 0 0.2 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.25</length>
+            <radius>0.25</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='world_link_fixed_joint_lump__robot1_head_link_collision_2'>
+        <pose>0 0 0.45 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <collision name='world_link_fixed_joint_lump__robot2_base_link_collision_3'>
+        <pose>0.8 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.3</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='world_link_fixed_joint_lump__robot2_body_link_collision_4'>
+        <pose>0.8 0 0.2 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.25</length>
+            <radius>0.25</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='world_link_fixed_joint_lump__robot2_head_link_collision_5'>
+        <pose>0.8 0 0.45 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name='world_link_fixed_joint_lump__robot1_base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.3</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='world_link_fixed_joint_lump__robot1_body_link_visual_1'>
+        <pose>0 0 0.2 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.25</length>
+            <radius>0.25</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='world_link_fixed_joint_lump__robot1_head_link_visual_2'>
+        <pose>0 0 0.45 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name='world_link_fixed_joint_lump__robot2_base_link_visual_3'>
+        <pose>0.8 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.3</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='world_link_fixed_joint_lump__robot2_body_link_visual_4'>
+        <pose>0.8 0 0.2 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.25</length>
+            <radius>0.25</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='world_link_fixed_joint_lump__robot2_head_link_visual_5'>
+        <pose>0.8 0 0.45 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='robot1_joint_left_arm' type='revolute'>
+      <pose relative_to='world_link'>0.28 0 0.32 0 -0 0</pose>
+      <parent>world_link</parent>
+      <child>robot1_left_arm</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='robot1_left_arm'>
+      <pose relative_to='robot1_joint_left_arm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='robot1_left_arm_collision'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='robot1_left_arm_visual'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='robot1_joint_right_arm' type='revolute'>
+      <pose relative_to='world_link'>-0.28 0 0.32 0 -0 0</pose>
+      <parent>world_link</parent>
+      <child>robot1_right_arm</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='robot1_right_arm'>
+      <pose relative_to='robot1_joint_right_arm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='robot1_right_arm_collision'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='robot1_right_arm_visual'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='robot2_joint_left_arm' type='revolute'>
+      <pose relative_to='world_link'>1.08 0 0.32 0 -0 0</pose>
+      <parent>world_link</parent>
+      <child>robot2_left_arm</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='robot2_left_arm'>
+      <pose relative_to='robot2_joint_left_arm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='robot2_left_arm_collision'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='robot2_left_arm_visual'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='robot2_joint_right_arm' type='revolute'>
+      <pose relative_to='world_link'>0.52 0 0.32 0 -0 0</pose>
+      <parent>world_link</parent>
+      <child>robot2_right_arm</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='robot2_right_arm'>
+      <pose relative_to='robot2_joint_right_arm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='robot2_right_arm_collision'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='robot2_right_arm_visual'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
